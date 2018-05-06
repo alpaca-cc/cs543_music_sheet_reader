@@ -17,10 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tempImageView: UIImageView!
     
     var lastPoint = CGPoint.zero
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    var brushWidth: CGFloat = 10.0
+    var red: CGFloat = 1.0
+    var green: CGFloat = 1.0
+    var blue: CGFloat = 1.0
+    var brushWidth: CGFloat = 2.0
     var opacity: CGFloat = 1.0
     var swiped = false
     var classifier = MusicNoteClassificationWrapper()
