@@ -173,7 +173,7 @@
 				TargetAttributes = {
 					EE43D46C1A14A6F200311C06 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 4K3S23Z5VQ;
+						DevelopmentTeam = 3D8MPG5B54;
 					};
 					EE43D4811A14A6F200311C06 = {
 						CreatedOnToolsVersion = 6.1;
@@ -374,11 +374,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4K3S23Z5VQ;
+				DEVELOPMENT_TEAM = 3D8MPG5B54;
 				INFOPLIST_FILE = DrawPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.yshen47.drawpad;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.yshen47.drawpad.chen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -388,11 +388,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4K3S23Z5VQ;
+				DEVELOPMENT_TEAM = 3D8MPG5B54;
 				INFOPLIST_FILE = DrawPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.yshen47.drawpad;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.yshen47.drawpad.chen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
