@@ -44,6 +44,22 @@ class MusicNoteClassificationWrapper {
         return -1
     }
     
+    func upload(image: UIImage) {
+        if let url = URL(string: "http://127.0.0.1:8888/image_upload.php") {
+            let session = URLSession.init(configuration: .default, delegate: nil, delegateQueue: nil)
+            let request = NSMutableURLRequest.init(url: url)
+            request.httpMethod = "POST"
+            let uploadTask = session.uploadTask(with: request as URLRequest, from: UIImageJPEGRepresentation(image, 0.8), completionHandler: { (data, response, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+            })
+            uploadTask.resume()
+        }
+    }
+    
+    
     func get_boxes(fromMeasure measure: UIImage) -> [UIImage]? {
         var res = [UIImage]()
         for i in 0..<6 {
