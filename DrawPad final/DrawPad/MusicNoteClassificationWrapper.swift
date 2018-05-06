@@ -21,10 +21,12 @@ class MusicNoteClassificationWrapper {
             return -1
         }
         self.measureBox = UIImage.init(cgImage: measureBox)
-        
+        upload(image: self.measureBox!)
+        /*
         guard let proposed_boxes = self.get_boxes(fromMeasure: self.measureBox!) else {
             return -1
         }
+        
         for box in proposed_boxes {
             if let pixelBuffer = box.pixelBufferGray(width: 28, height: 28) {
                 // Make the prediction with Core ML
@@ -41,14 +43,16 @@ class MusicNoteClassificationWrapper {
                 }
             }
         }
+ */
         return -1
     }
     
     func upload(image: UIImage) {
-        if let url = URL(string: "http://127.0.0.1:8888/image_upload.php") {
+        if let url = URL(string: "http://127.0.0.1:5000/api/get_score") {
             let session = URLSession.init(configuration: .default, delegate: nil, delegateQueue: nil)
             let request = NSMutableURLRequest.init(url: url)
             request.httpMethod = "POST"
+            request.allHTTPHeaderFields = ["content-type": "image/jpeg"]
             let uploadTask = session.uploadTask(with: request as URLRequest, from: UIImageJPEGRepresentation(image, 0.8), completionHandler: { (data, response, error) in
                 if let error = error {
                     print(error)

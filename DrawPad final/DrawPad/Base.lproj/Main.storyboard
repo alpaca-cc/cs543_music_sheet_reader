@@ -23,44 +23,9 @@
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-Gy-2aF" userLabel="measure boundary">
                                 <rect key="frame" x="37.5" y="283" width="300" height="100"/>
-                                <subviews>
-                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-MP-vBW">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
-                                        <subviews>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-Xe-wzr">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVF-ea-6Yx">
-                                                <rect key="frame" x="50" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUo-1n-r3s">
-                                                <rect key="frame" x="100" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRO-Kg-ibi">
-                                                <rect key="frame" x="150" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="0.1764705882" green="0.66274509800000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Eb-wx-Qeg">
-                                                <rect key="frame" x="200" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-3q-CnA">
-                                                <rect key="frame" x="250" y="0.0" width="50" height="100"/>
-                                                <color key="backgroundColor" red="0.62212611610000002" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LXq-MP-vBW" secondAttribute="trailing" id="8oi-Xa-V3O"/>
-                                    <constraint firstAttribute="bottom" secondItem="LXq-MP-vBW" secondAttribute="bottom" id="95z-uA-XP8"/>
-                                    <constraint firstItem="LXq-MP-vBW" firstAttribute="leading" secondItem="3lr-Gy-2aF" secondAttribute="leading" id="RCz-AD-BdD"/>
                                     <constraint firstAttribute="height" constant="100" id="VT3-jn-m77"/>
-                                    <constraint firstItem="LXq-MP-vBW" firstAttribute="top" secondItem="3lr-Gy-2aF" secondAttribute="top" id="rOS-PK-NW9"/>
                                     <constraint firstAttribute="width" constant="300" id="sPA-jc-uwk"/>
                                 </constraints>
                             </view>

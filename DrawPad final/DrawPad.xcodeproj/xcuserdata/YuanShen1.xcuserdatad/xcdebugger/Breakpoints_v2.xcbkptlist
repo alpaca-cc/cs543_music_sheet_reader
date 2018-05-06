@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DrawPad/MusicNoteClassificationWrapper.swift"
-            timestampString = "547276054.167285"
+            timestampString = "547282996.32348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "get_boxes(fromMeasure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DrawPad/MusicNoteClassificationWrapper.swift"
+            timestampString = "547282996.323804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "upload(image:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
