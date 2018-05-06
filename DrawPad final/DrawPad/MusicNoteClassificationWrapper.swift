@@ -26,8 +26,15 @@ class MusicNoteClassificationWrapper {
             return -1
         }
         for box in proposed_boxes {
-            let resized_box = resize(image: box, withSize: .init(width: 28, height: 28))
-            let predicted_class = try? model.prediction(image: buffer(from: resized_box)!)
+            if let pixelBuffer = box.pixelBufferGray(width: 28, height: 28) {
+                // Make the prediction with Core ML
+                if let prediction = try? model.prediction(image: pixelBuffer).output1 {
+                    var max_index = 0
+                    var max = prediction[0]
+                    for e in prediction {
+                    
+                }
+            }
         }
         return -1
     }
@@ -36,37 +43,7 @@ class MusicNoteClassificationWrapper {
         
         return [measure]
     }
-    
-    func buffer(from image: UIImage) -> CVPixelBuffer? {
-        print(image.size)
-        let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
-        var pixelBuffer : CVPixelBuffer?
-        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(image.size.width), Int(image.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
-        guard (status == kCVReturnSuccess) else {
-            return nil
-        }
-        
-        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
-        let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
-        
-        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
-        let context = CGContext(data: pixelData, width: Int(image.size.width), height: Int(image.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
-        context?.translateBy(x: 0, y: image.size.height)
-        context?.scaleBy(x: 1.0, y: -1.0)
-        
-        UIGraphicsPushContext(context!)
-        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        UIGraphicsPopContext()
-        CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
-        
-        return pixelBuffer
-    }
-    
     func resize(image: UIImage, withSize newSize: CGSize) -> UIImage {
-        
-        let horizontalRatio = newSize.width / image.size.width
-        let verticalRatio = newSize.height / image.size.height
-        
         var newImage: UIImage
         
         let renderFormat = UIGraphicsImageRendererFormat.default()
