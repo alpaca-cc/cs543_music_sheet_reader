@@ -28,11 +28,16 @@ class MusicNoteClassificationWrapper {
         for box in proposed_boxes {
             if let pixelBuffer = box.pixelBufferGray(width: 28, height: 28) {
                 // Make the prediction with Core ML
-                if let prediction = try? model.prediction(image: pixelBuffer).output1 {
+                if let pred_arr = try? model.prediction(image: pixelBuffer).output1 {
                     var max_index = 0
-                    var max = prediction[0]
-                    for e in prediction {
-                    
+                    var max = pred_arr[0]
+                    for i in 0..<pred_arr.shape[0].intValue {
+                        if pred_arr[i].intValue > max.intValue {
+                            max = pred_arr[i]
+                            max_index = i
+                        }
+                    }
+                    print(max_index)
                 }
             }
         }
@@ -40,8 +45,14 @@ class MusicNoteClassificationWrapper {
     }
     
     func get_boxes(fromMeasure measure: UIImage) -> [UIImage]? {
-        
-        return [measure]
+        var res = [UIImage]()
+        for i in 0..<6 {
+            guard let measureBox = measure.cgImage?.cropping(to: .init(x: i*50, y: 0, width: 50, height: 100)) else {
+                return nil
+            }
+            res.append(UIImage.init(cgImage: measureBox))
+        }
+        return res
     }
     func resize(image: UIImage, withSize newSize: CGSize) -> UIImage {
         var newImage: UIImage

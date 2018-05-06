@@ -32,7 +32,9 @@ extension UIImage {
         let g = CGFloat(data[pixelData + 1]) / 255.0
         let b = CGFloat(data[pixelData + 2]) / 255.0
         let a = CGFloat(data[pixelData + 3]) / 255.0
-        
+        print(r)
+        print(g)
+        print(b)
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
 
