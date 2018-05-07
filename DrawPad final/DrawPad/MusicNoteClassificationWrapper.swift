@@ -10,7 +10,7 @@ import Foundation
 import CoreML
 import UIKit
 import CoreImage
-
+import AVFoundation
 
 @available(iOS 11.0, *)
 class MusicNoteClassificationWrapper {
@@ -58,11 +58,27 @@ class MusicNoteClassificationWrapper {
                     print(error)
                     return
                 }
+                print(response)
+                print(data)
+                if data != nil {
+                    self.play_midi(data: data!)
+                }
             })
             uploadTask.resume()
         }
     }
     
+    func play_midi(data: Data) {
+        var sound: AVMIDIPlayer?
+        
+        do {
+            sound = try AVMIDIPlayer(data: data, soundBankURL: nil)
+            sound?.play()
+        } catch let error as NSError {
+            print("Error \(error.localizedDescription)")
+        }
+
+    }
     
     func get_boxes(fromMeasure measure: UIImage) -> [UIImage]? {
         var res = [UIImage]()
